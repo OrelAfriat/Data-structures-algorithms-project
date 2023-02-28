@@ -4,7 +4,7 @@ class Queue
     private LinkedListNode front;
     private int count;
 
-    //constructor
+ 
     public Queue() {
         this.rear = null;
         this.front = null;
@@ -12,8 +12,8 @@ class Queue
     }
 
 
-    // Utility function to dequeue the front element
-    public void dequeue()     // delete at the beginning
+   
+    public void dequeue()    
     {
         if (front == null)
         {
@@ -21,45 +21,45 @@ class Queue
         }
 
         LinkedListNode temp = front;
-        // advance front to the next node
+    
         front = front.next;
 
-        // if the list becomes empty
+    
         if (front == null) {
             rear = null;
         }
 
-        // decrease the node's count by 1
+
         count -= 1;
     }
 
-    // Utility function to add an item to the queue
-    public void add(NodeTree item)     // insertion at the end
+
+    public void add(NodeTree item)    
     {
-        // allocate a new node in a heap
+       
         LinkedListNode linkedNode = new LinkedListNode(item);
 
-        // special case: queue was empty
+     
         if (front == null)
         {
-            // initialize both front and rear
+           
             front = linkedNode;
             rear = linkedNode;
         }
         else {
-            // update rear
+         
             rear.next = linkedNode;
             rear = linkedNode;
         }
 
-        // increase the node's count by 1
+   
         count += 1;
     }
 
-    // Utility function to return the top element in a queue
+
     public NodeTree peek()
     {
-        // check for an empty queue
+       
         if (front == null) {
             System.exit(-1);
         }
@@ -68,12 +68,11 @@ class Queue
     }
 
 
-    // Utility function to check if the queue is empty or not
+
     public boolean isEmpty() {
         return rear == null && front == null;
     }
-
-    // Function to return the size of the queue
+    
     private int size() {
         return count;
     }
